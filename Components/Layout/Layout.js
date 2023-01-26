@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import Footer from './Footer/Footer';
-import Header from './Header/Header';
+import NavBar from './NavBar/NavBar';
 
 
 const Layout = ({ children }) => {
   return (
     <Fragment>
-      <Header />
+      <NavBar />
       {children}
       <Footer />
     </Fragment>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import styles from '../../../../styles/Featured.module.css';
+import styles from '/styles/Featured.module.css';
 
 const Featured = () => {
   const [index, setIndex] = useState(0);
