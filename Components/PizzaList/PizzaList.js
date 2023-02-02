@@ -2,7 +2,7 @@ import React from 'react';
 import PizzaCard from './PizzaCard/PizzaCard';
 import styles from '/styles/PizzaList.module.css';
 
-const PizzaList = () => {
+const PizzaList = ({ pizzaList }) => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>THE BEST PIZZA IN TOWN</h1>
@@ -12,14 +12,12 @@ const PizzaList = () => {
         sit amet, consectetur adipiscing elit.
       </p>
       <div className={styles.wrapper}>
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
-        <PizzaCard />
+        {pizzaList && pizzaList.map((item) => (
+          <React.Fragment key={item._id}>
+            <PizzaCard item={item} />
+          </React.Fragment>
+        ))
+        }
       </div>
     </div>
   );
