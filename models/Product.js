@@ -17,7 +17,7 @@ const ProductSchema = new mongoose.Schema({
     required: true,
   },
   prices: {
-    type: [number],
+    type: [Number],
     required: true,
   },
   extraOptions: {
@@ -39,4 +39,4 @@ const ProductSchema = new mongoose.Schema({
 );
 
 // here we export the collection Product with structured document (ProductSchema) and we check if it's already have bean created before or not
-export default mongoose.Model.Product || mongoose.Model("Product", ProductSchema);
+export default mongoose.model.Product || mongoose.model("Product", ProductSchema);

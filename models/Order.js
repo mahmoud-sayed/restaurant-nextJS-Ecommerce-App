@@ -30,4 +30,4 @@ const OrderSchema = new mongoose.Schema({
 );
 
 // here we export the collection Product with structured document (OrderSchema) and we check if it's already have bean created before or not
-export default mongoose.Model.Product || mongoose.Model("Order", OrderSchema);
+export default mongoose.model.Product || mongoose.model("Order", OrderSchema);
