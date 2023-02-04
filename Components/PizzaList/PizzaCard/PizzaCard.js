@@ -21,34 +21,3 @@ const PizzaCard = ({ item }) => {
 };
 
 export default PizzaCard;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

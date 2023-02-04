@@ -1,16 +1,17 @@
 import styles from "/styles/Product.module.css";
 import Image from "next/image";
 import { useState } from "react";
+import axios from "axios";
 
-const Product = () => {
+const Product = ({ pizza }) => {
   const [size, setSize] = useState(0);
-  const pizza = {
-    id: 1,
-    img: "/img/pizza.png",
-    name: "CAMPAGNOLA",
-    price: [19.9, 23.9, 27.9],
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis arcu purus, rhoncus fringilla vestibulum vel, dignissim vel ante. Nulla facilisi. Nullam a urna sit amet tellus pellentesque egestas in in ante.",
-  };
+  // const pizza = {
+  //   id: 1,
+  //   img: "/img/pizza.png",
+  //   name: "CAMPAGNOLA",
+  //   price: [19.9, 23.9, 27.9],
+  //   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis arcu purus, rhoncus fringilla vestibulum vel, dignissim vel ante. Nulla facilisi. Nullam a urna sit amet tellus pellentesque egestas in in ante.",
+  // };
 
   return (
     <div className={styles.container}>
@@ -84,6 +85,15 @@ const Product = () => {
       </div>
     </div>
   );
+};
+
+export const getServerSideProps = async ({ params }) => {
+  const res = await axios.get(`http://localhost:3000/api/products/${params.id}`);
+  return {
+    props: {
+      pizza: res.data
+    }
+  };
 };
 
 export default Product;
